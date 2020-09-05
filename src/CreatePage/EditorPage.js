@@ -43,6 +43,7 @@ export default class EditorPage extends Component {
   render() {
     const { content, redirect } = this.state;
     const { onCancel } = this.props;
+    const height = "80vh";
 
     if (redirect) {
       return <Redirect to={redirect} />;
@@ -58,16 +59,16 @@ export default class EditorPage extends Component {
         </Layout.Header>
         <Layout.Content style={{ padding: 10 }}>
           <Row>
-            <Col span={11}>
+            <Col span={12}>
               <Input.TextArea
-                rows={20}
                 value={content}
                 onChange={this.onChange}
                 autoFocus
+                style={{ height }}
               />
             </Col>
-            <Divider type="vertical" style={{ height: "50vh" }} />
-            <Col span={11}>
+            <Divider type="vertical" style={{ height }} />
+            <Col span={11} style={{ height, maxHeight: height, overflowY: "auto" }}>
               <ReactMarkdown source={content} />
             </Col>
           </Row>
