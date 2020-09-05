@@ -36,7 +36,7 @@ export default class MainPage extends Component {
             <p
               style={{
                 fontSize: vpWidth < 1000 ? "10vw" : "4vw",
-                marginTop: "10vh",
+                marginTop: "3vh",
                 marginBottom: 0,
               }}
             >
