@@ -5,6 +5,7 @@ import "./styles.css"; // antd style sheet
 import MainPage from "./MainPage";
 import CreatePage from "./CreatePage";
 import FeedbackPage from "./FeedbackPage";
+import PostPage from "./PostPage";
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
         <Route exact path="/" component={MainPage} />
         <Route exact path="/post" component={CreatePage} />
         <Route exact path="/feedback" component={FeedbackPage} />
+        <Route exact path="/posts/:id" component={PostPage} />
         <Route path="*">
           <Redirect to="/" />
         </Route>
