@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import "./styles.css"; // antd style sheet
+import "../node_modules/antd/dist/antd.css";
 import MainPage from "./MainPage";
 import CreatePage from "./CreatePage";
 import FeedbackPage from "./FeedbackPage";
