@@ -9,8 +9,8 @@ function App() {
   return (
     <BrowserRouter>
       <Switch>
-        <Route path="/" component={MainPage} />
-        <Route path="/post" component={CreatePage} />
+        <Route exact path="/" component={MainPage} />
+        <Route exact path="/post" component={CreatePage} />
       </Switch>
     </BrowserRouter>
   );

@@ -1,5 +1,6 @@
 import React from 'react'
 import { Space } from 'antd';
+import { Link } from 'react-router-dom';
 
 /**
  * This is a footer component for links to
@@ -16,13 +17,13 @@ export default function Footer() {
       <br/>
       <br/>
       <br/>
-      <a href="/post"> 가이드 작성하기 </a>
+      <Link to="/post"> 가이드 작성하기 </Link>
       <i className="fa fa-edit"></i>
       <br/>
       <br/>
       <br/>
       <br/>
-      <a href="/feedback"> 문의하기 </a>
+      <Link to="/feeback"> 문의하기 </Link>
     </Space>
   );
 }
