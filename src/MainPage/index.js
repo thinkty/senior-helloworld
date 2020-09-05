@@ -4,7 +4,7 @@ import SearchBox from "./SearchBox";
 import Footer from "../Footer";
 
 /**
- * This is main page and the user can use the search bar to search for guides,
+ * This is main page where the user can search for guides, or click on a link to
  * create guides, or leave a feedback
  */
 export default class MainPage extends Component {
