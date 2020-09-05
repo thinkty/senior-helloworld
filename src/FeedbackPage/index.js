@@ -38,9 +38,7 @@ export default class FeedbackPage extends Component {
           >
             <Space align="center" size="large" style={{ margin: 40 }}>
               <Link to="/">
-                <Button size="large" type="primary">
-                  돌아가기
-                </Button>
+                <Button size="large" type="primary"> 돌아가기 </Button>
               </Link>
               <Button
                 size="large"
