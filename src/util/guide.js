@@ -7,6 +7,4 @@
  *
  * @param {number} guideNum Guide number
  */
-export async function getGuide(guideNum) {
-
-}
+export function getGuide(guideNum) {}
