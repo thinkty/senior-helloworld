@@ -3,7 +3,6 @@ import ReactDOM from "react-dom";
 import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
 import "../node_modules/antd/dist/antd.css";
 import MainPage from "./MainPage";
-import CreatePage from "./CreatePage";
 import FeedbackPage from "./FeedbackPage";
 import PostPage from "./PostPage";
 
@@ -12,9 +11,8 @@ function App() {
     <BrowserRouter>
       <Switch>
         <Route exact path="/" component={MainPage} />
-        <Route exact path="/post" component={CreatePage} />
         <Route exact path="/feedback" component={FeedbackPage} />
-        <Route exact path="/posts/:id" component={PostPage} />
+        <Route exact path="/post/:id" component={PostPage} />
         <Route path="*">
           <Redirect to="/" />
         </Route>

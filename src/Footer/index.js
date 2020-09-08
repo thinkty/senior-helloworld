@@ -19,8 +19,8 @@ export default function Footer() {
     },
     {
       name: "가이드 작성하기",
-      url: "/post",
-      local: true,
+      url: "https://github.com/thinkty/senior-helloworld-server/blob/master/CONTRIBUTING.md",
+      local: false,
     },
     {
       name: "문의하기",

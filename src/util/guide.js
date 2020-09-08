@@ -3,10 +3,10 @@
  */
 
 /**
- * Function to send the guide to the server to be reviewed
+ * Function to request and get the guide from the server
  *
- * @param {string} content Markdown content in text
+ * @param {number} guideNum Guide number
  */
-export async function sendGuide(content) {
+export async function getGuide(guideNum) {
 
 }
