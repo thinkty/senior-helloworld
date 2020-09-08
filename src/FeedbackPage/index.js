@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import { Layout, Space, Input, Button } from 'antd';
+import {
+  Layout, Space, Input, Button,
+} from 'antd';
 import { Link } from 'react-router-dom';
 
 /**
@@ -29,12 +31,12 @@ export default class FeedbackPage extends Component {
     const { feedback } = this.state;
 
     return (
-      <Layout style={{ height: "100vh" }}>
+      <Layout style={{ height: '100vh' }}>
         <Layout.Content>
           <Space
             align="center"
             direction="vertical"
-            style={{ width: "100%" }}
+            style={{ width: '100%' }}
           >
             <Space align="center" size="large" style={{ margin: 40 }}>
               <Link to="/">
@@ -54,7 +56,7 @@ export default class FeedbackPage extends Component {
               onChange={this.onChange}
               autoFocus
               rows={18}
-              style={{ width: "90vw" }}
+              style={{ width: '90vw' }}
             />
           </Space>
         </Layout.Content>

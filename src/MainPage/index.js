@@ -1,7 +1,7 @@
-import React, { Component } from "react";
-import { Space, Layout } from "antd";
-import SearchBox from "./SearchBox";
-import Footer from "../Footer";
+import React, { Component } from 'react';
+import { Space, Layout } from 'antd';
+import SearchBox from './SearchBox';
+import Footer from '../Footer';
 
 /**
  * This is main page where the user can search for guides, or click on a link to
@@ -25,18 +25,18 @@ export default class MainPage extends Component {
     const vpWidth = window.innerWidth;
 
     return (
-      <Layout style={{ height: "100vh" }}>
+      <Layout style={{ height: '100vh' }}>
         <Layout.Content>
           <Space
             align="center"
             direction="vertical"
             size={0}
-            style={{ width: "100%" }}
+            style={{ width: '100%' }}
           >
             <p
               style={{
-                fontSize: vpWidth < 1000 ? "10vw" : "4vw",
-                marginTop: "3vh",
+                fontSize: vpWidth < 1000 ? '10vw' : '4vw',
+                marginTop: '3vh',
                 marginBottom: 0,
               }}
             >
@@ -44,7 +44,7 @@ export default class MainPage extends Component {
             </p>
             <p
               style={{
-                fontSize: vpWidth < 1000 ? "5vw" : "2vw",
+                fontSize: vpWidth < 1000 ? '5vw' : '2vw',
                 marginBottom: 60,
               }}
             >
@@ -53,7 +53,7 @@ export default class MainPage extends Component {
             <SearchBox id="searchBox" onSearch={this.onSearch} />
           </Space>
         </Layout.Content>
-        <Layout.Footer style={{ textAlign: "center" }}>
+        <Layout.Footer style={{ textAlign: 'center' }}>
           <Footer />
         </Layout.Footer>
       </Layout>

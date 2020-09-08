@@ -1,6 +1,6 @@
-import React from "react";
-import { Input } from "antd";
-import PropTypes from "prop-types";
+import React from 'react';
+import { Input } from 'antd';
+import PropTypes from 'prop-types';
 
 export default function SearchBox(props) {
   const { onSearch, id } = props;
@@ -14,7 +14,7 @@ export default function SearchBox(props) {
       placeholder="검색 시작하기"
       enterButton="검색하기"
       autoFocus
-      style={{ width: "95vw", maxWidth: "500px" }}
+      style={{ width: '95vw', maxWidth: '500px' }}
     />
   );
 }

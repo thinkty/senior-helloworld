@@ -1,4 +1,4 @@
-import React from 'react'
+import React from 'react';
 import { Space } from 'antd';
 import { Link } from 'react-router-dom';
 
@@ -13,18 +13,18 @@ export default function Footer() {
   const fontSize = width > 1000 ? 15 : 10;
   const links = [
     {
-      name: "Github",
-      url: "https://github.com/thinkty/senior-helloworld",
+      name: 'Github',
+      url: 'https://github.com/thinkty/senior-helloworld',
       local: false,
     },
     {
-      name: "가이드 작성하기",
-      url: "https://github.com/thinkty/senior-helloworld-server/blob/master/CONTRIBUTING.md",
+      name: '가이드 작성하기',
+      url: 'https://github.com/thinkty/senior-helloworld-server/blob/master/CONTRIBUTING.md',
       local: false,
     },
     {
-      name: "문의하기",
-      url: "/feedback",
+      name: '문의하기',
+      url: '/feedback',
       local: true,
     },
   ];
@@ -34,14 +34,24 @@ export default function Footer() {
       {
         links.map(({ name, url, local }) => (
           local
-          ?
-          <Link to={url} key={name}>
-            <p style={{ fontSize }}> {name} </p>
-          </Link> 
-          :
-          <a href={url} key={name}>
-            <p style={{ fontSize }}> {name} </p>
-          </a>
+            ? (
+              <Link to={url} key={name}>
+                <p style={{ fontSize }}>
+                  {' '}
+                  {name}
+                  {' '}
+                </p>
+              </Link>
+            )
+            : (
+              <a href={url} key={name}>
+                <p style={{ fontSize }}>
+                  {' '}
+                  {name}
+                  {' '}
+                </p>
+              </a>
+            )
         ))
       }
     </Space>

@@ -1,10 +1,12 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter, Switch, Route, Redirect } from "react-router-dom";
-import "../node_modules/antd/dist/antd.css";
-import MainPage from "./MainPage";
-import FeedbackPage from "./FeedbackPage";
-import PostPage from "./PostPage";
+import React from 'react';
+import ReactDOM from 'react-dom';
+import {
+  BrowserRouter, Switch, Route, Redirect,
+} from 'react-router-dom';
+import '../node_modules/antd/dist/antd.css';
+import MainPage from './MainPage';
+import FeedbackPage from './FeedbackPage';
+import PostPage from './PostPage';
 
 function App() {
   return (
@@ -21,4 +23,4 @@ function App() {
   );
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+ReactDOM.render(<App />, document.getElementById('root'));
