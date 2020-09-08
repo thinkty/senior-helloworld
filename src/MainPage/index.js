@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { Space, Layout } from 'antd';
 import { Redirect } from 'react-router-dom';
-import SearchBox from './SearchBox';
-import Footer from '../Footer';
+import SearchBox from '../components/SearchBox';
+import Footer from '../components/Footer';
 
 /**
  * This is main page where the user can search for guides, or click on a link to
@@ -58,7 +58,7 @@ export default class MainPage extends Component {
             >
               어르신들을 위한 컴퓨터 길잡이
             </p>
-            <SearchBox id="searchBox" onSearch={this.onSearch} />
+            <SearchBox id="mainSearchBox" onSearch={this.onSearch} />
           </Space>
         </Layout.Content>
         <Layout.Footer style={{ textAlign: 'center' }}>
