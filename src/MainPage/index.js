@@ -29,7 +29,13 @@ export default class MainPage extends Component {
     const vpWidth = window.innerWidth;
 
     if (query !== '') {
-      return <Redirect to={{ pathname: '/search', state: { query } }} />;
+      return (
+        <Redirect
+          push
+          from="/"
+          to={{ pathname: '/search', state: { query } }}
+        />
+      );
     }
 
     return (

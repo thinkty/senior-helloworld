@@ -7,6 +7,7 @@ import '../node_modules/antd/dist/antd.css';
 import MainPage from './MainPage';
 import FeedbackPage from './FeedbackPage';
 import PostPage from './PostPage';
+import SearchPage from './SearchPage';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
       <Switch>
         <Route exact path="/" component={MainPage} />
         <Route exact path="/feedback" component={FeedbackPage} />
+        <Route exact path="/search" component={SearchPage} />
         <Route exact path="/post/:id" component={PostPage} />
         <Route path="*">
           <Redirect to="/" />
