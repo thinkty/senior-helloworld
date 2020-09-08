@@ -1,15 +1,17 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { Layout, Space } from 'antd';
+import { Layout, Space, Spin } from 'antd';
 import SearchBox from '../components/SearchBox';
 import Footer from '../components/Footer';
 import ResponsiveText from '../components/ResponsiveText';
+import { searchGuides } from '../util/guide';
 
 export default class SearchPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
       query: '',
+      loading: false,
     };
   }
 
@@ -22,7 +24,24 @@ export default class SearchPage extends Component {
 
     if (location && location.state && location.state.query !== '') {
       this.setState({ query: location.state.query });
+      this.sendQuery(location.state.query);
     }
+  }
+
+  /**
+   * Function to send a query to the server and get the results
+   *
+   * @param {string} query Query created by the user
+   */
+  sendQuery = async (query) => {
+    this.setState({ loading: true });
+    await searchGuides(query)
+      .then(() => {
+        this.setState({ loading: false });
+      })
+      .catch(() => {
+        this.setState({ loading: false });
+      });
   }
 
   /**
@@ -31,10 +50,11 @@ export default class SearchPage extends Component {
   onSearch = (event) => {
     const query = event.target ? event.target.value : event;
     this.setState({ query });
+    this.sendQuery(query);
   };
 
   render() {
-    const { query } = this.state;
+    const { query, loading } = this.state;
 
     return (
       <Layout style={{ height: '100vh' }}>
@@ -46,7 +66,10 @@ export default class SearchPage extends Component {
             style={{ width: '100%', marginTop: 100 }}
           >
             <SearchBox id="searchBox" onSearch={this.onSearch} />
-            <ResponsiveText style={{ margin: 20 }} value={`Search: ${query}`} />
+            <ResponsiveText value={`Search: ${query}`} style={{ margin: 20 }} />
+            <Spin spinning={loading}>
+              <div> TODO: Implement result container </div>
+            </Spin>
           </Space>
         </Layout.Content>
         <Layout.Footer style={{ textAlign: 'center' }}>
