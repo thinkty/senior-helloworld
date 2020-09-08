@@ -3,6 +3,7 @@ import { Space, Layout } from 'antd';
 import { Redirect } from 'react-router-dom';
 import SearchBox from '../components/SearchBox';
 import Footer from '../components/Footer';
+import ResponsiveText from '../components/ResponsiveText';
 
 /**
  * This is main page where the user can search for guides, or click on a link to
@@ -26,7 +27,6 @@ export default class MainPage extends Component {
 
   render() {
     const { query } = this.state;
-    const vpWidth = window.innerWidth;
 
     if (query !== '') {
       return (
@@ -47,23 +47,18 @@ export default class MainPage extends Component {
             size={0}
             style={{ width: '100%' }}
           >
-            <p
-              style={{
-                fontSize: vpWidth < 1000 ? '10vw' : '4vw',
-                marginTop: '3vh',
-                marginBottom: 0,
-              }}
-            >
-              시니어 헬로월드
-            </p>
-            <p
-              style={{
-                fontSize: vpWidth < 1000 ? '5vw' : '2vw',
-                marginBottom: 60,
-              }}
-            >
-              어르신들을 위한 컴퓨터 길잡이
-            </p>
+            <ResponsiveText
+              value="시니어 헬로월드"
+              big="4vw"
+              small="10vw"
+              style={{ marginTop: '3vh', marginBottom: 0 }}
+            />
+            <ResponsiveText
+              value="어르신들을 위한 컴퓨터 길잡이"
+              big="2vw"
+              small="5vw"
+              style={{ marginBottom: 60 }}
+            />
             <SearchBox id="mainSearchBox" onSearch={this.onSearch} />
           </Space>
         </Layout.Content>

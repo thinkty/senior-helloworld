@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { Layout, Space } from 'antd';
 import SearchBox from '../components/SearchBox';
 import Footer from '../components/Footer';
+import ResponsiveText from '../components/ResponsiveText';
 
 export default class SearchPage extends Component {
   constructor(props) {
@@ -28,7 +29,8 @@ export default class SearchPage extends Component {
    * Send query to the server based on the input
    */
   onSearch = (event) => {
-    // const query = event.target ? event.target.value : event;
+    const query = event.target ? event.target.value : event;
+    this.setState({ query });
   };
 
   render() {
@@ -40,10 +42,11 @@ export default class SearchPage extends Component {
           <Space
             align="center"
             direction="vertical"
-            size={0}
+            size={1}
             style={{ width: '100%', marginTop: 100 }}
           >
             <SearchBox id="searchBox" onSearch={this.onSearch} />
+            <ResponsiveText style={{ margin: 20 }} value={`Search: ${query}`} />
           </Space>
         </Layout.Content>
         <Layout.Footer style={{ textAlign: 'center' }}>
