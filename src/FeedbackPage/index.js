@@ -55,8 +55,7 @@ export default class FeedbackPage extends Component {
               value={feedback}
               onChange={this.onChange}
               autoFocus
-              rows={18}
-              style={{ width: '90vw' }}
+              style={{ width: '90vw', height: '70vh', fontSize: 30 }}
             />
           </Space>
         </Layout.Content>
