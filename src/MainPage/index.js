@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { Space, Layout } from 'antd';
+import { Redirect } from 'react-router-dom';
 import SearchBox from './SearchBox';
 import Footer from '../Footer';
 
@@ -10,19 +11,26 @@ import Footer from '../Footer';
 export default class MainPage extends Component {
   constructor(props) {
     super(props);
-    this.state = {};
+    this.state = {
+      query: '',
+    };
   }
 
   /**
    * Method called when search clicked
    */
   onSearch = (event) => {
-    const value = event.target ? event.target.value : event;
-    console.log(value);
+    const query = event.target ? event.target.value : event;
+    this.setState({ query });
   };
 
   render() {
+    const { query } = this.state;
     const vpWidth = window.innerWidth;
+
+    if (query !== '') {
+      return <Redirect to={{ pathname: '/search', state: { query } }} />;
+    }
 
     return (
       <Layout style={{ height: '100vh' }}>
