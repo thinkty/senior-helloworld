@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 /**
  * This is a footer component for links to
  * - Github: https://github.com/thinkty/senior-helloworld
- * - Create a guide: /post
+ * - Create a guide: https://github.com/thinkty/senior-helloworld-server/blob/master/CONTRIBUTING.md
  * - Leave a feedback: /feedback
  */
 export default function Footer() {

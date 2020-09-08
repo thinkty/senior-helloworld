@@ -2,6 +2,10 @@ import React from 'react';
 import { Input } from 'antd';
 import PropTypes from 'prop-types';
 
+/**
+ * This is a text input component used in main page and search page for
+ * searching guides
+ */
 export default function SearchBox(props) {
   const { onSearch, id } = props;
 
