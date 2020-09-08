@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
+import { Layout, Space } from 'antd';
 import SearchBox from '../components/SearchBox';
+import Footer from '../components/Footer';
 
 export default class SearchPage extends Component {
   constructor(props) {
@@ -25,20 +27,29 @@ export default class SearchPage extends Component {
   /**
    * Send query to the server based on the input
    */
-  onSearch = () => {
-
-  }
+  onSearch = (event) => {
+    // const query = event.target ? event.target.value : event;
+  };
 
   render() {
     const { query } = this.state;
 
     return (
-      <div>
-        <div>
-          {query}
-        </div>
-        <SearchBox id="searchBox" onSearch={this.onSearch} />
-      </div>
+      <Layout style={{ height: '100vh' }}>
+        <Layout.Content>
+          <Space
+            align="center"
+            direction="vertical"
+            size={0}
+            style={{ width: '100%', marginTop: 100 }}
+          >
+            <SearchBox id="searchBox" onSearch={this.onSearch} />
+          </Space>
+        </Layout.Content>
+        <Layout.Footer style={{ textAlign: 'center' }}>
+          <Footer />
+        </Layout.Footer>
+      </Layout>
     );
   }
 }
