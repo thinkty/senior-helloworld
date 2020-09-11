@@ -2,7 +2,9 @@
  * Module with helper functions related to guides
  */
 
-import Axios from 'axios';
+import axios from 'axios';
+
+const serverUrl = 'http://localhost:8080/api/search';
 
 /**
  * Function to request and get the guide from the server
@@ -16,6 +18,10 @@ export function getGuide(guideNum) {}
  *
  * @param {string} query Query created by the user
  */
-export async function searchGuides(query) {
-  await Axios.get('http://www.example.com');
+export function searchGuides(query) {
+  return axios({
+    method: 'GET',
+    url: serverUrl,
+    data: { query },
+  });
 }
