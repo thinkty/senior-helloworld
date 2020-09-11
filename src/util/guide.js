@@ -11,7 +11,9 @@ const serverUrl = 'http://localhost:8080/api/search';
  *
  * @param {number} guideNum Guide number
  */
-export function getGuide(guideNum) {}
+export function getGuide(guideNum) {
+  return axios.get(serverUrl, { data: { guideNum } });
+}
 
 /**
  * Function to send the query to the server and return the results
@@ -19,9 +21,5 @@ export function getGuide(guideNum) {}
  * @param {string} query Query created by the user
  */
 export function searchGuides(query) {
-  return axios({
-    method: 'GET',
-    url: serverUrl,
-    data: { query },
-  });
+  return axios.post(serverUrl, { query });
 }
