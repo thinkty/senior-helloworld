@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import {
-  Layout, Space, Input, Button,
+  Layout, Space, Input, Button, message,
 } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, Redirect } from 'react-router-dom';
+import { send } from '../util/feedback';
 
 /**
  * This is the feedback page where the user can leave a feedback
@@ -10,7 +11,10 @@ import { Link } from 'react-router-dom';
 export default class FeedbackPage extends Component {
   constructor(props) {
     super(props);
-    this.state = { feedback: '' };
+    this.state = {
+      feedback: '',
+      redirect: false,
+    };
   }
 
   /**
@@ -24,11 +28,33 @@ export default class FeedbackPage extends Component {
    * Method to send feedback to server
    */
   submitFeedback = () => {
-    // TODO: Send feedback to server
+    const { feedback } = this.state;
+    send(feedback)
+      .then((response) => {
+        const { status } = response;
+        if (status === 200) {
+          message.info('Feedback sent', 3);
+
+          setTimeout(() => {
+            this.setState({ redirect: true });
+          }, 3000);
+        } else {
+          message.error('Failed to send feedback', 3);
+        }
+      })
+      .catch(() => {
+        message.error('[ERROR] Failed to send feedback', 3);
+      });
   }
 
   render() {
-    const { feedback } = this.state;
+    const { feedback, redirect } = this.state;
+
+    if (redirect) {
+      return (
+        <Redirect push from="/feedback" to="/" />
+      );
+    }
 
     return (
       <Layout style={{ height: '100vh' }}>
