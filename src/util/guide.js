@@ -3,8 +3,7 @@
  */
 
 import axios from 'axios';
-
-const serverUrl = 'http://localhost:8080/api/search';
+import { searchUrl } from './config.json';
 
 /**
  * Function to request and get the guide from the server
@@ -12,7 +11,7 @@ const serverUrl = 'http://localhost:8080/api/search';
  * @param {number} guideNum Guide number
  */
 export function getGuide(guideNum) {
-  return axios.get(serverUrl, { data: { guideNum } });
+  return axios.get(searchUrl, { data: { guideNum } });
 }
 
 /**
@@ -21,5 +20,5 @@ export function getGuide(guideNum) {
  * @param {string} query Query created by the user
  */
 export function searchGuides(query) {
-  return axios.post(serverUrl, { query });
+  return axios.post(searchUrl, { query });
 }

@@ -1,0 +1,4 @@
+{
+  "searchUrl": "http://localhost:8080/api/search",
+  "feedbackUrl": "http://localhost:8080/api/feedback"
+}
