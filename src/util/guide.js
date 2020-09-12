@@ -3,7 +3,7 @@
  */
 
 import axios from 'axios';
-import { searchUrl } from './config.json';
+import { guideUrl, searchUrl } from './config.json';
 
 /**
  * Function to request and get the guide from the server
@@ -11,7 +11,7 @@ import { searchUrl } from './config.json';
  * @param {number} guideNum Guide number
  */
 export function getGuide(guideNum) {
-  return axios.get(searchUrl, { data: { guideNum } });
+  return axios.get(guideUrl, { data: { guideNum } });
 }
 
 /**
